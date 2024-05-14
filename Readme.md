@@ -1,3 +1,6 @@
+FORK自https://github.com/kyc/Actions-OpenWrt
+
+
 # 借助 GitHub Actions 的 OpenWrt 在线自动编译.
 
 #### hanwckf大佬mt798x闭源仓库- [hanwckf/immortalwrt-mt798x](https://github.com/hanwckf/immortalwrt-mt798x).
