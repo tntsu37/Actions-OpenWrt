@@ -36,7 +36,7 @@ env:
   OPENWRT_NAME: JiaY-shi
   REPO_URL: https://github.com/JiaY-shi/openwrt
   REPO_BRANCH: ipq60xx-devel_nss
-  FEEDS_CONF: feeds.conf.default
+  FEEDS_CONF: JDCloud-AX1800-Pro/feeds.conf.default
   CONFIG_FILE: JDCloud-AX1800-Pro/.config
   DIY_P1_SH: JDCloud-AX1800-Pro/diy-part1.sh
   DIY_P2_SH: JDCloud-AX1800-Pro/diy-part2.sh
@@ -93,7 +93,7 @@ jobs:
         
     - name: 加载feeds.conf.default & DIY_P1_SH
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
@@ -102,7 +102,7 @@ jobs:
       run: |
         cp JDCloud-AX1800-Pro/jdc_ax1800-pro.patch openwrt/jdc_ax1800-pro.patch
         cd openwrt
-        git apply jdc_ax1800-pro.patch
+        
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
